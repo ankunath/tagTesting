@@ -1,0 +1,22 @@
+resources:
+ 
+  - name: rsync_test_gitRepo
+    type: gitRepo
+    integration: git
+    pointer:
+      sourceName: ankunath/ds-sll
+      # branch: "temp"
+      branches:
+        only:
+          - vtest.*
+      # tags:
+      #   except:
+      #     - v1.*
+        # only:
+        #   - v3.*
+
+      # buildOnTagPush: true #normally false by default
+      # buildOnRelease: true #normally false by default
+      buildOnPullRequest: true #since this is true by default
+      buildOnCommit: true #since this is true by default
+
